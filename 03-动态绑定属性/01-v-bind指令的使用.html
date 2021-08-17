@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id='app'>
+        <!-- v-bind是动态绑定数据的 -->
+        <img v-bind:src="imgUrl" alt="">
+        <a v-bind:href="aHref">JD</a>
+
+        <!-- 语法糖的写法 -->
+        <img :src="imgUrl" alt="" />
+        <a :href="aHref">jd</a>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello',
+                imgUrl: ['https://img14.360buyimg.com/ceco/s150x150_jfs/t1/159722/38/5682/268261/601a43e3E78cbacb6/60bdf8c1c170c8ae.jpg!q70.jpg.webp'],
+                aHref: 'https://www.jd.com/'
+            }
+        })
+    </script>
+</body>
+
+</html>

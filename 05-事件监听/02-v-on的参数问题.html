@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <!-- 事件调用的方法没有参数 -->
+        <button @click="btn1Click()">提交1</button>
+        <button @click="btn1Click">提交1</button>
+
+        <!-- 在事件定义是，写函数时省略了小括号，但是方法本身是需要传递一个函数的 -->
+        <button @click=btn2Click()>提交2</button>
+        <button @click="btn4Click">提交2</button>
+
+        <!-- 在方法定义时，需要event对象，同时又需要其他参数 -->
+        <!-- 在调用方法时，如何手动获取到浏览器产生的event对象：$event -->
+        <button @click="btn3Click(123,$event)">提交3</button>
+
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊'
+            },
+            methods: {
+                btn1Click() {
+                    console.log('btn1Click');
+                },
+                btn2Click(abc) {
+                    console.log('--------');
+                },
+                btn3Click(abc, event) {
+                    console.log('++++++++++++', abc, event);
+                },
+                btn4Click() {
+                    console.log('正在点击');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

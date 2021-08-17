@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for遍历数组和对象</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1.在遍历对象的过程中，如果只是获取一个值，获取到的时value -->
+        <ul>
+            <li v-for="(value,key) in info">{{key}}=>{{value}}</li>
+        </ul>
+        <!-- 2.获取key和value 格式:（value,key） -->
+        <ul>
+            <li v-for="(value,key) in info">{{key}}=>{{value}}</li>
+        </ul>
+        <!-- 3.获取key和value和index 格式:(value,key,index) -->
+        <ul>
+            <li v-for="(value,key,index) in info">{{index +1}}.{{key}}=>{{value}}</li>
+        </ul>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                info: {
+                    name: 'why',
+                    age: 18,
+                    height: 1.88
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
