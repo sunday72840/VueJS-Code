@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <cpn>
+            <!-- 使用template模板中的slot-scope属性，把slot插槽传入 最后使用join（" > "）实现，符号要格式化成字符串 -->
+            <template slot-scope="slot">
+                <span>{{slot.data.join( ' > ' )}}</span>
+            </template>
+        </cpn>
+        <!-- ======================第二种写法========================================= -->
+        <cpn>
+            <template slot-scope="slot">
+                <div>
+                    {{slot.abc.join(' ')}}
+                </div>
+            </template>
+        </cpn>
+    </div>
+    <template id="cpn">
+        <div>
+            <!-- 这里的:data=""中的data可以自由命名 -->
+            <slot :data="planguages"> 
+                <ul>
+                    <li v-for="item in planguages">{{item}}</li>
+                </ul>
+            </slot>
+        </div>
+    </template>
+    <script src="./js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊'
+            },
+            components: {
+                cpn: {
+                    template: '#cpn',
+                    data() {
+                        return {
+                            planguages: ['JavaScript', 'C++', 'Java', 'C#', 'Python', 'PHP', 'Swift']
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
