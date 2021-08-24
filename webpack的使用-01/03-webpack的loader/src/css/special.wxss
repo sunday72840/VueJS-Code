@@ -1,0 +1,10 @@
+body {
+  text-align: center;
+  font-size: 50px;
+  background-color: #a9a9a9;
+  background: url('../img/ico.png') no-repeat center;
+}
+h2 {
+  line-height: 800px;
+  text-align: center;
+}
