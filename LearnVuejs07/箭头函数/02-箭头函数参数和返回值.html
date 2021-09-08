@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.参数问题
+        const sum = (num1, num2) => {
+            return num1 + num2
+        }
+
+        //1.2放入一个参数
+        const power = num => {
+            return num * num
+        }
+
+        //2.
+        //2.1函数代码块中有多行代码时
+        const test = () => {
+            //1.打印Hello world
+            console.log('Hello World');
+            //2.打印Hello Vuejs
+            console.log('Hello VueJs');
+        }
+
+        //2.2函数代码块中只有一行代码
+        // const mun1 = (num1, num2) => {
+        //     return num1 + num2
+        // }
+        const mu1 = (num1, num2) => num1 * num2
+        console.log(mu1(20, 30));
+
+        // const demo = () => {
+        //     console.log('Hello Demo');
+        // }
+
+        const demo = () => console.log('Hello Demo');
+        console.log(demo());
+    </script>
+</body>
+
+</html>
