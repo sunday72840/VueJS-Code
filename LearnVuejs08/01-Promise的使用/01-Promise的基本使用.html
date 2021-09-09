@@ -10,8 +10,75 @@
 
 <body>
     <script>
-        const name = 'why'
-        console.log(name);
+        // 1.使用setTimeout
+        // setTimeout(() => {
+        //     console.log('Hello World');
+        // }, 1000)
+        // 传入参数 本身要传入函数(resolve,reject)
+        // resolve ,reject 本身又是函数
+        // new Promise((resolve, reject) => {
+        //     // 第一次网络请求的代码
+        //     setTimeout(() => {
+        //         resolve()
+        //     }, 1000)
+        // }).then(() => {
+        //     // 第一次拿到结果的处理代码
+        //     console.log('Hello World');
+        //     console.log('Hello World');
+        //     console.log('Hello World');
+        //     console.log('Hello World');
+        //     console.log('Hello World');
+        //     console.log('Hello World');
+        //     console.log('Hello World');
+        //     console.log('Hello World');
+
+        //     return new Promise((resolve, reject) => {
+        //         // 第二次网络请求的代码
+        //         setTimeout(() => {
+        //             resolve()
+        //         }, 1000)
+        //     })
+        // }).then(() => {
+        //     // 第二次拿到结果的代码
+        //     console.log('Hello VueJs');
+        //     console.log('Hello VueJs');
+        //     console.log('Hello VueJs');
+        //     console.log('Hello VueJs');
+        //     console.log('Hello VueJs');
+        //     console.log('Hello VueJs');
+        //     return new Promise((resolve, reject) => {
+        //         // 第三次网络请求的代码
+        //         setTimeout(() => {
+        //             resolve()
+        //         }, 1000)
+        //     })
+        // }).then(() => {
+        //     // 第三次处理的代码
+        //     console.log('Hello Python');
+        //     console.log('Hello Python');
+        //     console.log('Hello Python');
+        //     console.log('Hello Python');
+        //     console.log('Hello Python');
+        //     console.log('Hello Python');
+        //     console.log('Hello Python');
+        //     console.log('Hello Python');
+        //     console.log('Hello Python');
+        // })
+
+        new Promise((reslove, reject) => {
+            setTimeout((data) => {
+                    // 请求成功
+                    reslove('Hello world')
+                        // 请求失败
+                    reject('error message')
+                }, 1000)
+                // 请求成功后执行回调
+        }).then((data) => {
+            console.log(data);
+            // 请求失败后执行回调
+        }).catch((err) => {
+            console.log(err);
+        })
     </script>
 </body>
 
